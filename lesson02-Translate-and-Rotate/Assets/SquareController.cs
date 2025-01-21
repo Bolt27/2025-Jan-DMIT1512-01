@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SquareController : MonoBehaviour
@@ -34,13 +35,22 @@ public class SquareController : MonoBehaviour
 
         float left = bottomLeft.x;
         float right = topRight.x;
-        //EXERCISE: fix the below so that it accurately bounces off the edges of the screen
-        if(transform.position.x >= right || transform.position.x <= left)
+        //EXERCISE (2025-01-16): fix the below so that it accurately bounces off the edges of the screen
+        //(2025-01-21 - Solution is below)
+        float width = GetComponent<Renderer>().bounds.size.x;
+        if(transform.position.x + (width / 2) >= right || transform.position.x - (width / 2) <= left)
         {
             directionX *= -1;
         }
 
-        //EXERCISE: do the same for Y
+        //EXERCISE: (2025-01-21) do the same for Y
+        float top = topRight.y;
+        float bottom = bottomLeft.y;
+        float height = GetComponent<Renderer>().bounds.size.y;
+        if(transform.position.y + (height / 2) >= top || transform.position.y - (height / 2) <= bottom)
+        {
+            directionY *= -1;
+        }
 
 
     }

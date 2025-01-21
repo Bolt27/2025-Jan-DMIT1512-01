@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "day02-Translate-and-Rotate.sln"
+    "dotnet.defaultSolution": "lesson02-Translate-and-Rotate.sln"
 }
