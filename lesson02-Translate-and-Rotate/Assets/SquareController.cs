@@ -8,6 +8,11 @@ public class SquareController : MonoBehaviour
 
     public float rotationSpeedZ, rotationDirectionZ;
 
+    public Vector3 scaleChangeDirection;
+    public Vector3 scaleChangeSpeed;
+    public Vector3 scaleChangeMax;
+    public Vector3 scaleChangeMin;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,7 +48,7 @@ public class SquareController : MonoBehaviour
             directionX *= -1;
         }
 
-        //EXERCISE: (2025-01-21) do the same for Y
+        //EXERCISE: (2025-01-21) do the same for Y (2025-01-21: SOLUTION below)
         float top = topRight.y;
         float bottom = bottomLeft.y;
         float height = GetComponent<Renderer>().bounds.size.y;
@@ -52,6 +57,17 @@ public class SquareController : MonoBehaviour
             directionY *= -1;
         }
 
+        Vector3 scaleChange = scaleChangeDirection + scaleChangeSpeed;
+        scaleChange *= Time.deltaTime;
+        transform.localScale += scaleChange;
+        if(transform.localScale.x > scaleChangeMax.x || transform.localScale.x < scaleChangeMin.x)
+        {
+            scaleChangeDirection.x *= -1;
+        }
+        if(transform.localScale.y > scaleChangeMax.y || transform.localScale.y < scaleChangeMin.y)
+        {
+            scaleChangeDirection.y *= -1;
+        }
 
     }
 }
