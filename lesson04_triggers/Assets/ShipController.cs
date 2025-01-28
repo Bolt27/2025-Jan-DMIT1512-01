@@ -24,4 +24,19 @@ public class ShipController : MonoBehaviour
         OnTriggerStay2D - called every frame during which they are in contact
         OnTriggerExit2D - called when they stop being in contact
     */
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        // GameObject whatIBumpedInto;
+        // whatIBumpedInto = collider2D.gameObject;
+        // Destroy(whatIBumpedInto);
+        
+    }
+    // void OnTriggerStay2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("#################OnTriggerStay2D#################");
+    // }
+    // void OnTriggerExit2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("<<<<<<<<>>>>>>>>OnTriggerExit2D<<<<<<<<>>>>>>>>");
+    // }
 }
