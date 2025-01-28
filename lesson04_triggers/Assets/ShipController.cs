@@ -5,6 +5,7 @@ public class ShipController : MonoBehaviour
 {
     public float movementSpeed;
     private InputAction _moveAction;
+    private bool _maxLeftReached, _maxRightReached;
     void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
@@ -15,7 +16,18 @@ public class ShipController : MonoBehaviour
         Vector2 translationValue = _moveAction.ReadValue<Vector2>();
         translationValue.y = 0;
         translationValue *= Time.deltaTime * movementSpeed;
-        transform.Translate(translationValue);
+        //if we're trying to move right
+        if(translationValue.x > 0 && !_maxRightReached)
+        {
+            //_maxLeftReached = false;
+            transform.Translate(translationValue);
+        }
+        if(translationValue.x < 0 && !_maxLeftReached)//we're moving left
+        {
+            //_maxRightReached = false;
+            transform.Translate(translationValue);
+        }
+        
     }
 
     /*
@@ -30,13 +42,25 @@ public class ShipController : MonoBehaviour
         // whatIBumpedInto = collider2D.gameObject;
         // Destroy(whatIBumpedInto);
         
+        //is the thing that I collided with on my left?
+        if(collider2D.transform.position.x < transform.position.x)
+        {
+            _maxLeftReached = true;
+        }
+        else //it's on my right
+        {
+            _maxRightReached = true;
+            Debug.Log("hit right side");
+        }
+
     }
     // void OnTriggerStay2D(Collider2D collider2D)
     // {
     //     Debug.Log("#################OnTriggerStay2D#################");
     // }
-    // void OnTriggerExit2D(Collider2D collider2D)
-    // {
-    //     Debug.Log("<<<<<<<<>>>>>>>>OnTriggerExit2D<<<<<<<<>>>>>>>>");
-    // }
+    void OnTriggerExit2D(Collider2D collider2D)
+    {
+        _maxLeftReached = false;
+        _maxRightReached = false;
+    }
 }
