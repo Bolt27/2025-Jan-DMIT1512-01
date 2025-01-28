@@ -10,7 +10,6 @@ public class ShipController : MonoBehaviour
     {
         _moveAction = InputSystem.actions.FindAction("Move");
     }
-
     void Update()
     {
         Vector2 translationValue = _moveAction.ReadValue<Vector2>();
@@ -19,15 +18,12 @@ public class ShipController : MonoBehaviour
         //if we're trying to move right
         if(translationValue.x > 0 && !_maxRightReached)
         {
-            //_maxLeftReached = false;
             transform.Translate(translationValue);
         }
         if(translationValue.x < 0 && !_maxLeftReached)//we're moving left
         {
-            //_maxRightReached = false;
             transform.Translate(translationValue);
         }
-        
     }
 
     /*
@@ -54,13 +50,13 @@ public class ShipController : MonoBehaviour
         }
 
     }
-    // void OnTriggerStay2D(Collider2D collider2D)
-    // {
-    //     Debug.Log("#################OnTriggerStay2D#################");
-    // }
     void OnTriggerExit2D(Collider2D collider2D)
     {
         _maxLeftReached = false;
         _maxRightReached = false;
     }
+    // void OnTriggerStay2D(Collider2D collider2D)
+    // {
+    //     Debug.Log("#################OnTriggerStay2D#################");
+    // }
 }
