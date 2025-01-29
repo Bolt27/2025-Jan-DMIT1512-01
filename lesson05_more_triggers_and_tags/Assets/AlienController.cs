@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class AlienController : MonoBehaviour
@@ -7,6 +8,12 @@ public class AlienController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(speed * _direction * Time.deltaTime);
+        Vector2 translationValue = _direction * Time.deltaTime * speed;
+        transform.Translate(translationValue);
+
+    }
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        _direction.x *= -1;
     }
 }
