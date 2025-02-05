@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - PlayerShip
+  - WallLeft
+  - WallRight
   layers:
   - Default
   - TransparentFX
