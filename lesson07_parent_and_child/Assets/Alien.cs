@@ -8,6 +8,7 @@ public class Alien : MonoBehaviour
         {
             //change the direction of the game object that is my direct parent
             transform.parent.GetComponent<Parent>().direction.x *= -1;
+            //move the parent down by some amount
         }
     }
 }
