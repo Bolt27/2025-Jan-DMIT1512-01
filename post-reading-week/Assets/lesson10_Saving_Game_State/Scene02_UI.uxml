@@ -1,7 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <engine:Label text="Score:" style="font-size: 30px; position: absolute; top: 157px; left: 17px; height: 52px; width: 93px; background-color: rgba(229, 51, 51, 0.88);" />
     <engine:Label name="ScoreLabel" style="font-size: 30px; position: absolute; top: 157px; left: 123px; height: 50px; width: 68px; background-color: rgba(229, 223, 51, 0.88);" />
-    <engine:Button text="Increase Score" name="IncreaseScoreButton" style="position: absolute; top: 216px; left: 18px; height: 49px; width: 175px; background-color: rgb(78, 134, 190);" />
-    <engine:Label text="Scene 01" style="font-size: 30px; position: absolute; top: 22px; left: 15px; height: 84px; width: 260px; background-color: rgba(94, 12, 125, 0.88); color: rgb(241, 224, 224);" />
-    <engine:Button text="Go to Scene 02&#10;&#10;" name="GoToScene02Button" style="position: absolute; top: 309px; left: 21px; height: 91px; width: 231px; background-color: rgb(183, 78, 190);" />
+    <engine:Button text="Decrease Score" name="DecreaseScoreButton" style="position: absolute; top: 244px; left: 8px; height: 49px; width: 175px; background-color: rgb(78, 134, 190);" />
+    <engine:Label text="Scene 02" style="font-size: 30px; position: absolute; top: 57px; left: 11px; height: 84px; width: 260px; background-color: rgba(51, 229, 166, 0.88);" />
+    <engine:Button text="Go to Scene 01&#10;" name="GoToScene01Button" style="position: absolute; top: 337px; left: 81px; height: 91px; width: 231px; background-color: rgb(86, 190, 78);" />
 </engine:UXML>
