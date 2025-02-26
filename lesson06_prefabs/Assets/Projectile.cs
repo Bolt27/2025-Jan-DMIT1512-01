@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour
     
     public float speed;
     public Vector2 direction;
+
+    public GameObject splosionPrefab;
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime, Space.Self);
@@ -16,7 +18,10 @@ public class Projectile : MonoBehaviour
     {
         if(collider2D.gameObject.CompareTag("PlayerShip"))
         {
+            //instantiate an explosion prefab
+            Instantiate(splosionPrefab, transform.position, Quaternion.Euler(0, 0, 0));//note: "Euler" angles are 0-360 degrees
             Destroy(collider2D.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
