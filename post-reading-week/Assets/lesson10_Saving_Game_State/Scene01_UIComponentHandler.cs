@@ -7,8 +7,7 @@ public class Scene01_UIComponentHandler : MonoBehaviour
     private Button _increaseScoreButton, _goToScene02Button;
     private Label _scoreLabel;
     
-    //in any script that needs to read from or write to the game state, follow the steps
-    //in this script
+    //in any script that needs to read from or write to the game state, follow the following steps
 
     //Step #1, declare a gameState data member
     private GameState gameState;
