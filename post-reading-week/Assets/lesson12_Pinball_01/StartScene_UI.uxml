@@ -6,5 +6,5 @@
     <engine:Label text="Current Score:" style="position: absolute; font-size: 50px; top: 660px; left: 76px;" />
     <engine:Button text="Play!" name="LoadLevel01Button" style="position: absolute; top: 541px; left: 126px; height: 104px; width: 244px; font-size: 100px;" />
     <engine:Label name="HighScoreLabel" style="position: absolute; font-size: 50px; top: 469px; left: 89px; color: rgb(129, 217, 28);" />
-    <engine:Label name="CurrentScoreLabel" style="position: absolute; font-size: 50px; top: 726px; left: 76px;" />
+    <engine:Label name="CurrentScoreLabel" style="position: absolute; font-size: 50px; top: 726px; left: 76px; color: rgb(224, 201, 37);" />
 </engine:UXML>

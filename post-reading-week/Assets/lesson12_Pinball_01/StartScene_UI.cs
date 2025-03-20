@@ -10,20 +10,20 @@ public class StartScene_UI : MonoBehaviour
     void Awake()
     {
         _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameStateFinal>();
-        
         _root = GetComponent<UIDocument>().rootVisualElement;
         _highScoreLabel = _root.Q<Label>("HighScoreLabel");
         _currentScoreLabel = _root.Q<Label>("CurrentScoreLabel");
+        PopulateScore();
     }
     void OnEnable()
     {
-        PopulateScore();
         _root.Q<Button>("LoadButton").clicked += Load;
         _root.Q<Button>("SaveButton").clicked += Save;
         _root.Q<Button>("LoadLevel01Button").clicked += LoadLevel01;
     }
     private void PopulateScore()
     {
+        //Debug.Log();
         _highScoreLabel.text = _gameState.HighScore + "";
         _currentScoreLabel.text = _gameState.CurrentScore + "";
     }
@@ -38,7 +38,7 @@ public class StartScene_UI : MonoBehaviour
     }
     internal void LoadLevel01()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Pinball");
     }
 
 }

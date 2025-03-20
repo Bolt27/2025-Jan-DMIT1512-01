@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/lesson12_Pinball_01/Pinball.unity
+    guid: 0cf58c80090ea4ae39c465d7de12f987
+  - enabled: 1
+    path: Assets/lesson12_Pinball_01/StartScene.unity
+    guid: 046602c607adb403581865cc92f938a3
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
@@ -14,10 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/lesson09_Intro_To_UI/Scene02.unity
     guid: 4fd7ad0d9355945fb82e09b0815a9990
-  - enabled: 1
+  - enabled: 0
     path: Assets/lesson10_Saving_Game_State/Scene01.unity
     guid: cb1b565a6cbb74cc88c780fa259aedb6
-  - enabled: 1
+  - enabled: 0
     path: Assets/lesson10_Saving_Game_State/Scene02.unity
     guid: 85dbdcc9a9c834c1a96636fb642d9321
   m_configObjects:

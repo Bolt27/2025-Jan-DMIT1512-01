@@ -11,6 +11,12 @@ public class Flipper : MonoBehaviour
         Right, Left
     }
     public FlipperType _type;
+    private GameStateFinal _gameState;
+    void Awake()
+    {
+        //Step #2, in "Awake", do this
+        _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameStateFinal>();
+    }
     void Start()
     {
         joint2D = GetComponent<HingeJoint2D>();
@@ -29,5 +35,9 @@ public class Flipper : MonoBehaviour
                 break;
         }
         
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        _gameState.CurrentScore++;
     }
 }
