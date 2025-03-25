@@ -11,7 +11,7 @@ public class GameData
 
 public class GameStateFinal : MonoBehaviour
 {
-    private GameData _gameData;
+    private GameData _gameData; //= new GameData();
     public int CurrentScore
     {
         get => _gameData._currentScore;
