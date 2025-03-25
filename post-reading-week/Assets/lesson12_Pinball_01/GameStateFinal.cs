@@ -9,6 +9,21 @@ public class GameData
     public int _highScore = 0;
 }
 
+/*
+    THINGS TO DO FOR THE ASSIGNMENT:
+    #1) in "Awake", load data (we don't need those buttons)
+    #2) in the Pinball scene, save data when the scene is unloaded:
+        in the DeathZone class, add this method:
+        void OnDestroy()
+        {
+            Debug.Log("Scene is unloading (OnDestroy)");
+            //save data here
+        }
+    #3) alter the UI so that the opening scene only displays high score, not current score
+    #4) add logic so that it only saves the high score if the current score is greater than the high score
+
+*/
+
 public class GameStateFinal : MonoBehaviour
 {
     private GameData _gameData; //= new GameData();
@@ -37,6 +52,7 @@ public class GameStateFinal : MonoBehaviour
     public void SaveToDisk()
     {
         string dataPath = Path.Combine(Application.persistentDataPath, "Conrad.txt");
+
         string jsonString = JsonUtility.ToJson(_gameData);
         Debug.Log("Saving score to " + Application.persistentDataPath);
         using(StreamWriter streamWriter = File.CreateText(dataPath))

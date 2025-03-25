@@ -19,24 +19,19 @@ public class StartScene_UI : MonoBehaviour
         _root.Q<Button>("LoadLevel01Button").clicked += LoadLevel01;
         PopulateScore();
     }
-    void OnEnable()
-    {
-        
-    }
     private void PopulateScore()
     {
-        //Debug.Log();
         _highScoreLabel.text = _gameState.HighScore + "";
         _currentScoreLabel.text = _gameState.CurrentScore + "";
     }
     internal void Load()
     {
-       // _gameState.LoadFromDisk();
+        _gameState.LoadFromDisk();
         PopulateScore();
     }
     internal void Save()
     {
-        //_gameState.SaveToDisk();
+        _gameState.SaveToDisk();
     }
     internal void LoadLevel01()
     {
