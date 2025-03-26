@@ -17,9 +17,9 @@ public class Pinball_UI : MonoBehaviour
     void Update()
     {
         //only update UI if necessary (round-trips to the screen are costly)
-        if(int.Parse(_currentScoreLabel.text) != _gameState.CurrentScore)
-        {
-            _currentScoreLabel.text = _gameState.CurrentScore + "";
-        }
+        // if(int.Parse(_currentScoreLabel.text) != _gameState.CurrentScore)
+        // {
+        //     _currentScoreLabel.text = _gameState.CurrentScore + "";
+        // }
     }
 }

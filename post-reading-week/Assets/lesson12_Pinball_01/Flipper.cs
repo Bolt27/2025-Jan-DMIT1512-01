@@ -15,7 +15,7 @@ public class Flipper : MonoBehaviour
     void Awake()
     {
         //Step #2, in "Awake", do this
-        _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameStateFinal>();
+       // _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameStateFinal>();
     }
     void Start()
     {
@@ -38,6 +38,6 @@ public class Flipper : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        _gameState.CurrentScore++;
+        //_gameState.CurrentScore++;
     }
 }

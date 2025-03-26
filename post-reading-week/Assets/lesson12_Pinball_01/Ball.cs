@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
     {
         //suggestion: change a UI label on the scene to "game over",
         //then wait 5 seconds (with a coroutine), then run the code below
-        SceneManager.LoadScene("StartScene");
+        //SceneManager.LoadScene("StartScene");
     }
 
 }
