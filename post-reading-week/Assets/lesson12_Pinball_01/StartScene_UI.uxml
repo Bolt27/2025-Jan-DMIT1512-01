@@ -1,0 +1,10 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="Welcome!" style="position: absolute; font-size: 100px;" />
+    <engine:Button text="Load&#x9;" name="LoadButton" style="position: absolute; top: 145px; left: 117px; height: 104px; width: 244px; font-size: 100px;" />
+    <engine:Button text="Save" name="SaveButton" style="position: absolute; top: 277px; left: 114px; height: 104px; width: 244px; font-size: 100px;" />
+    <engine:Label text="Highest Score Ever:" style="position: absolute; font-size: 50px; top: 390px; left: 86px;" />
+    <engine:Label text="Current Score:" style="position: absolute; font-size: 50px; top: 660px; left: 76px;" />
+    <engine:Button text="Play!" name="LoadLevel01Button" style="position: absolute; top: 541px; left: 126px; height: 104px; width: 244px; font-size: 100px;" />
+    <engine:Label name="HighScoreLabel" style="position: absolute; font-size: 50px; top: 469px; left: 89px; color: rgb(129, 217, 28);" />
+    <engine:Label name="CurrentScoreLabel" style="position: absolute; font-size: 50px; top: 726px; left: 76px; color: rgb(224, 201, 37);" />
+</engine:UXML>
