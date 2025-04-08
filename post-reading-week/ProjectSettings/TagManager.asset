@@ -5,11 +5,15 @@ TagManager:
   serializedVersion: 3
   tags:
   - GameState
+  - BombPickup
+  - ExplosionFX
+  - Bullet
+  - HealthBar
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
