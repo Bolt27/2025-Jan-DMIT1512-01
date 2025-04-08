@@ -8,17 +8,19 @@ public class PlatformerController : MonoBehaviour
     public float moveForce;//365
     public Transform groundCheck;
     private Rigidbody2D _myRigidBody;
+    private Animator _myAnimator;
     private InputAction _jump;
     private InputAction _move;
     private bool _grounded;
-    private bool _jumping;
+    private bool _initiateJump;
 
     void Awake()
     {
         _myRigidBody = GetComponent<Rigidbody2D>();
+        _myAnimator = GetComponent<Animator>();
         _jump = InputSystem.actions.FindAction("Jump");
         _move = InputSystem.actions.FindAction("Move");
-        _jumping = false;
+        _initiateJump = false;
     }
 
     //todo: Update() vs. FixedUpdate()
@@ -28,7 +30,7 @@ public class PlatformerController : MonoBehaviour
         _grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if(_jump.WasPressedThisFrame() && _grounded)
         {
-            _jumping = true;
+            _initiateJump = true;
         }
     }
 
@@ -50,10 +52,11 @@ public class PlatformerController : MonoBehaviour
                 new Vector2(Mathf.Sign( _myRigidBody.linearVelocityX) * maxSpeed, 
                                         _myRigidBody.linearVelocityY);
         }
-        if(_jumping)
+        if(_initiateJump)
         {
             _myRigidBody.AddForce(new Vector2(0f, jumpForce));
-            _jumping = false;
+            _myAnimator.SetTrigger("Jump");
+            _initiateJump = false;
         }
     }
 }
