@@ -9,7 +9,7 @@ public class PlatformerController : MonoBehaviour
     private Animator _myAnimator;
     private InputAction _jump, _move;
     private bool _grounded, _jumpInitiated;
-
+    private bool _facingRight;
     void Awake()
     {
         _myRigidBody = GetComponent<Rigidbody2D>();
@@ -17,6 +17,7 @@ public class PlatformerController : MonoBehaviour
         _jump = InputSystem.actions.FindAction("Jump");
         _move = InputSystem.actions.FindAction("Move");
         _jumpInitiated = false;
+        _facingRight = true;
     }
 
     //todo: Update() vs. FixedUpdate()
@@ -52,5 +53,17 @@ public class PlatformerController : MonoBehaviour
             _myAnimator.SetTrigger("Jump");
             _jumpInitiated = false;
         }
+
+        if((horizontalMovement > 0 && !_facingRight) || (horizontalMovement < 0 && _facingRight) )
+        {
+            Flip();
+        }
+    }
+    private void Flip()
+    {
+        _facingRight = !_facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }
