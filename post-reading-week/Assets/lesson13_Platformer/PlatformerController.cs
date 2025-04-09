@@ -3,16 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlatformerController : MonoBehaviour
 {
-    public float maxSpeed; //5
-    public float jumpForce;//100
-    public float moveForce;//365
+    public float maxSpeed, jumpForce, moveForce;
     public Transform groundCheck;
     private Rigidbody2D _myRigidBody;
     private Animator _myAnimator;
-    private InputAction _jump;
-    private InputAction _move;
-    private bool _grounded;
-    private bool _initiateJump;
+    private InputAction _jump, _move;
+    private bool _grounded, _jumpInitiated;
 
     void Awake()
     {
@@ -20,7 +16,7 @@ public class PlatformerController : MonoBehaviour
         _myAnimator = GetComponent<Animator>();
         _jump = InputSystem.actions.FindAction("Jump");
         _move = InputSystem.actions.FindAction("Move");
-        _initiateJump = false;
+        _jumpInitiated = false;
     }
 
     //todo: Update() vs. FixedUpdate()
@@ -30,7 +26,7 @@ public class PlatformerController : MonoBehaviour
         _grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if(_jump.WasPressedThisFrame() && _grounded)
         {
-            _initiateJump = true;
+            _jumpInitiated = true;
         }
     }
 
@@ -48,15 +44,13 @@ public class PlatformerController : MonoBehaviour
         //have we exceeded maxSpeed? If yes, set to maxSpeed.
         if(Mathf.Abs(_myRigidBody.linearVelocityX) > maxSpeed)
         {
-            _myRigidBody.linearVelocity = 
-                new Vector2(Mathf.Sign( _myRigidBody.linearVelocityX) * maxSpeed, 
-                                        _myRigidBody.linearVelocityY);
+            _myRigidBody.linearVelocityX = Mathf.Sign(_myRigidBody.linearVelocityX) * maxSpeed;
         }
-        if(_initiateJump)
+        if(_jumpInitiated)
         {
             _myRigidBody.AddForce(new Vector2(0f, jumpForce));
             _myAnimator.SetTrigger("Jump");
-            _initiateJump = false;
+            _jumpInitiated = false;
         }
     }
 }
