@@ -53,7 +53,7 @@ public class PlatformerController : MonoBehaviour
             _myAnimator.SetTrigger("Jump");
             _jumpInitiated = false;
         }
-
+        
         if((horizontalMovement > 0 && !_facingRight) || (horizontalMovement < 0 && _facingRight) )
         {
             Flip();
