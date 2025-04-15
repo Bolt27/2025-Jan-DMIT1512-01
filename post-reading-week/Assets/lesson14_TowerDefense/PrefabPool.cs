@@ -5,6 +5,7 @@ public class PrefabPool : MonoBehaviour
     private void Awake()
     {
         InitializeProjectiles();
+        
     }
 
     public int numPlayerProjectilesInScene;

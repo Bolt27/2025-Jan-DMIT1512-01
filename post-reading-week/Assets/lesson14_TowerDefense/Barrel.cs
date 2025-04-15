@@ -19,6 +19,7 @@ public class Barrel : MonoBehaviour
 
         //times -1 to make it rotate in an intuitive direction
         turretBase.Rotate(new Vector3(0, 0, -1 * rotationDirection * rotationSpeed * Time.deltaTime));
+        
         if(_shoot.WasPressedThisFrame())
         {
             Shoot();
