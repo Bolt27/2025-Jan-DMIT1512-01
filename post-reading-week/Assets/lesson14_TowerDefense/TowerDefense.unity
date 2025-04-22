@@ -163,6 +163,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0d1fd4bdb3547ac9248d4cc25651b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &320416484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320416486}
+  - component: {fileID: 320416485}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &320416485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320416484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0d1fd4bdb3547ac9248d4cc25651b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &320416486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320416484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.89, y: 0.29, z: -0.022443268}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509262779
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9f5348ede6e6842ad58ca4f4a2f481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numShipsInScene: 100
+  shipPrefab: {fileID: 2254492555280059889, guid: 29f2e11a0b21b754ca1200761d3afd13, type: 3}
   numPlayerProjectilesInScene: 100
   projectilePrefab: {fileID: 5705100157467976702, guid: 75d2bcd2618032047a7f72e25e7ee596, type: 3}
 --- !u!4 &509262781
@@ -572,11 +618,57 @@ Transform:
   m_GameObject: {fileID: 1948519468}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.43, y: 1.53, z: 0}
+  m_LocalPosition: {x: -5.43, y: -2.67, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1820234768}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1989765752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989765754}
+  - component: {fileID: 1989765753}
+  m_Layer: 0
+  m_Name: ShipSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1989765753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989765752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5c8b3120ef80e4087e56f6f4f422e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numShipsWave01: 100
+  target: {fileID: 320416486}
+--- !u!4 &1989765754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989765752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8369466, y: 0.13561219, z: -0.022443268}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -586,3 +678,5 @@ SceneRoots:
   - {fileID: 839770404}
   - {fileID: 1948519470}
   - {fileID: 509262781}
+  - {fileID: 1989765754}
+  - {fileID: 320416486}
