@@ -7,7 +7,7 @@ public class Ball : MonoBehaviour
     private GameStateFinal _gameState;
     void Start()
     {
-        _gameState = GameObject.FindGameObjectWithTag("GameState")GetComponent<GameStateFinal>();
+        _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameStateFinal>();
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

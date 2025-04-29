@@ -5,7 +5,47 @@ public class PrefabPool : MonoBehaviour
     {
         InitializeProjectiles();
         InitializeShips();
-    }    
+        InitializeTurrets();
+    } 
+
+    #region Turrets
+    public int numTurretsInScene;
+    public Transform turretPrefab;
+    protected Transform[] turretPool = new Transform[0];
+     public void InitializeTurrets()
+    {
+        if (turretPool.Length == 0)
+        {
+            turretPool = new Transform[numTurretsInScene];
+            for (int c = 0; c < numTurretsInScene; c++)
+            {
+                turretPool[c] = Instantiate(turretPrefab, this.gameObject.transform);
+                turretPool[c].gameObject.SetActive(false);
+            }
+        }
+    }
+    public Transform Turret
+    {
+        get
+        {
+            Transform returnTransform = null;
+            int c = 0;
+            while (c < turretPool.Length && returnTransform == null)
+            {
+                if (!turretPool[c].gameObject.activeInHierarchy)
+                {
+                    returnTransform = turretPool[c];
+                    turretPool[c].gameObject.SetActive(true);
+                }
+                c++;
+            }
+            return returnTransform;
+        }
+    }
+    #endregion
+
+
+
     #region Ships
     public int numShipsInScene;
     public Transform shipPrefab;
